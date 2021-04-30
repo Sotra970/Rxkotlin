@@ -3,12 +3,13 @@
 RX knowledge base 
 
 Gradle implementaion 
+
     // RxJava2 Dependencies
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.2'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation("io.reactivex.rxjava2:rxkotlin:2.2.0")
 
 1-STREAM TYPES(observables )
-	1-Observable: emit a stream elements (endlessly)
+    
+    1-Observable: emit a stream elements (endlessly)
 	
 	2-Flowable: emit a stream of elements (endlessly, with backpressure)
 	
@@ -30,6 +31,7 @@ Gradle implementaion
 
 
 3-SUBJECTS : abstract (which means it doesn’t provide an implementation) but the framework provides several default implementations that can be super-useful.
+
 	1-Publish Subject:
 		-it doesn’t cache any event,so notifications about past elements aren’t forwarded 
 			to each new observer.
@@ -56,6 +58,7 @@ Gradle implementaion
 	
 
 4-OPERATORS 
+
 	1-Creating Observables
 		-Create:operator creates an Observable from scratch 
 			-http://reactivex.io/documentation/operators/images/create.c.png
