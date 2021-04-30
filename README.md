@@ -35,33 +35,37 @@ Gradle implementaion
 > **3-SUBJECTS :**
  - abstract (which means it doesn’t provide an implementation) but the framework provides several default implementations that can be super-useful.
 
-**1. Publish Subject:**
+	**1. Publish Subject:**
  
-	 - it doesn’t cache any event,so notifications about past elements aren’t forwardedto each new observer.
+	 - it doesn’t cache any event,so notifications about past elements aren’t forwarded to each new observer.
 	 -   Once the PublishableSubject emits an error, all the subscribers are notified and won’t receive anything more. 
-	 -   A PublishableSubject is useful, for instance, in bypassing hardwar events like scroll positions, mouse events, clicks, etc… 
-	 - so yo can subscribe several observers to them but you just want to listen out for newer events.
-	    
-**2.  Replay:**
+	   -   A PublishableSubject is useful, for instance, in bypassing hardwar events like  		scroll positions, mouse events, clicks, etc… 
+	    - so yo can subscribe several observers to them 		but you just want to listen out for newer events.
+	    ![enter image description here](https://reactivex.io/documentation/operators/images/S.PublishSubject.e.png)
 
- - replays events to current and late observers, and it can be created in several ways:
- 
-		1. create: unbounded subject that replays everything
-		2. createWithSize(int):only retains the amount of items indicated.
-		3. createWithTime(int, TimeUnit): retains only objects contained in the specified time window.
-		4. createWithTimeAndSize: This is  combination of 2 and 3 
+	**2.  Replay:**
+	 - replays events to current and late observers, and it can be created in several ways:
+**1. create:** unbounded subject that replays everything
+**2. createWithSize(int):** only retains the amount of items indicated.
+**3. createWithTime(int, TimeUnit):** retains only objects contained in the specified time window.
+**4.  createWithTimeAndSize:** This is  combination of 2 and 3 
 
-**3. BehaviorSubject:**
-
+	![enter image description here](https://reactivex.io/documentation/operators/images/S.ReplaySubject.png)
+	**3. BehaviorSubject:**
+	
 	 -  used in Android’s Presenters/ViewModels, is quite similar to the PublishSubject
 	 - caches the most recent value emitted(deliver last emitted value to new subscriber)
+	 ![enter image description here](https://reactivex.io/documentation/operators/images/S.BehaviorSubject.png)
+	![enter image description here](https://reactivex.io/documentation/operators/images/S.BehaviorSubject.e.png)
 
-**4. AsyncSubject :**
-  	
-
+	**4. AsyncSubject :**
+  
 	 - caches the last event emitted and sends it to the observers only when an onComplete event is emitted.
 	 - This subject can be used when we don’t care about the data stream, only the last object.
+	 
+	 ![enter image description here](https://reactivex.io/documentation/operators/images/S.AsyncSubject.png)
 
+![enter image description here](https://reactivex.io/documentation/operators/images/S.AsyncSubject.e.png)
 > **4-OPERATORS**
 
 **1-Creating Observables**
@@ -93,3 +97,4 @@ Gradle implementaion
 		- https://jakewharton.com/the-state-of-managing-state-with-rxjava/
 	- error handling :
 		-  https://www.baeldung.com/rxjava-error-handling
+
