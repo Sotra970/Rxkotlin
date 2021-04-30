@@ -37,26 +37,24 @@ Gradle implementaion
 
 **1. Publish Subject:**
  
- - it doesn’t cache any event,so notifications about past elements
-	   aren’t forwardedto each new observer.
- -   Once the PublishableSubject emits an error, all the subscribers
-	          are notified and won’t receive anything more. 
-   -   A PublishableSubject is useful, for instance, in bypassing hardwar events like  		scroll positions, mouse events, clicks, etc… 
-    - so yo can subscribe several observers to them 		but you just want to listen out for newer events.
+	 - it doesn’t cache any event,so notifications about past elements aren’t forwardedto each new observer.
+	 -   Once the PublishableSubject emits an error, all the subscribers are notified and won’t receive anything more. 
+	 -   A PublishableSubject is useful, for instance, in bypassing hardwar events like scroll positions, mouse events, clicks, etc… 
+	 - so yo can subscribe several observers to them but you just want to listen out for newer events.
 	    
 **2.  Replay:**
 
  - replays events to current and late observers, and it can be created in several ways:
-
-	1. create: unbounded subject that replays everything
-	2. createWithSize(int):only retains the amount of items indicated.
-   	3. createWithTime(int, TimeUnit): retains only objects contained in the specified time window.
-   	4. createWithTimeAndSize: This is  combination of 2 and 3 
+ 
+		1. create: unbounded subject that replays everything
+		2. createWithSize(int):only retains the amount of items indicated.
+		3. createWithTime(int, TimeUnit): retains only objects contained in the specified time window.
+		4. createWithTimeAndSize: This is  combination of 2 and 3 
 
 **3. BehaviorSubject:**
-	
- -  used in Android’s Presenters/ViewModels, is quite similar to the PublishSubject
- - caches the most recent value emitted(deliver last emitted value to new subscriber)
+
+	 -  used in Android’s Presenters/ViewModels, is quite similar to the PublishSubject
+	 - caches the most recent value emitted(deliver last emitted value to new subscriber)
 
 **4. AsyncSubject :**
   	
