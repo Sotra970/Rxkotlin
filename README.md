@@ -41,7 +41,7 @@ Gradle implementaion
 	 -   Once the PublishableSubject emits an error, all the subscribers are notified and won’t receive anything more. 
 	   -   A PublishableSubject is useful, for instance, in bypassing hardwar events like  		scroll positions, mouse events, clicks, etc… 
 	    - so yo can subscribe several observers to them 		but you just want to listen out for newer events.
-	    ![PublishSubject](https://reactivex.io/documentation/operators/images/S.PublishSubject.e.png)
+	    ![PublishSubject](http://reactivex.io/documentation/operators/images/S.PublishSubject.e.png)
 
 	**2.  Replay:**
 	 - replays events to current and late observers, and it can be created in several ways:
@@ -51,15 +51,15 @@ Gradle implementaion
 **4.  createWithTimeAndSize:** This is  combination of 2 and 3 
 
 	
-	![ReplaySubject](https://reactivex.io/documentation/operators/images/S.ReplaySubject.png)
+	![ReplaySubject](http://reactivex.io/documentation/operators/images/S.ReplaySubject.png)
 
 	**3. BehaviorSubject:**
 	
 	 -  used in Android’s Presenters/ViewModels, is quite similar to the PublishSubject
 	 - caches the most recent value emitted(deliver last emitted value to new subscriber)
-	 ![BehaviorSubject](https://reactivex.io/documentation/operators/images/S.BehaviorSubject.png)
+	 ![BehaviorSubject](http://reactivex.io/documentation/operators/images/S.BehaviorSubject.png)
 	
-	![BehaviorSubject](https://reactivex.io/documentation/operators/images/S.BehaviorSubject.e.png)
+	![BehaviorSubject](http://reactivex.io/documentation/operators/images/S.BehaviorSubject.e.png)
 
 
 	
@@ -69,10 +69,10 @@ Gradle implementaion
 	 - This subject can be used when we don’t care about the data stream, only the last object.
 	 
 	 
-	 ![AsyncSubject](https://reactivex.io/documentation/operators/images/S.AsyncSubject.png)
+	 ![AsyncSubject](http://reactivex.io/documentation/operators/images/S.AsyncSubject.png)
 
 
-![AsyncSubject](https://reactivex.io/documentation/operators/images/S.AsyncSubject.e.png)
+	![AsyncSubject](http://reactivex.io/documentation/operators/images/S.AsyncSubject.e.png)
 
 > **4-OPERATORS**
 
@@ -80,9 +80,10 @@ Gradle implementaion
 
  - **1. Create:**
 	  - operator creates an Observable from scratch 
-	- next > next >  .. compelete	
-![create](https://reactivex.io/documentation/operators/images/create.c.png)
-		-  [see more](https://reactivex.io/documentation/operators/create.html)
+	- next > next >  .. compelete
+	- 
+![create](http://reactivex.io/documentation/operators/images/create.c.png)
+		-  [see more](http://reactivex.io/documentation/operators/create.html)
 - **2. Defer:** 
 	- The Defer operator waits until an observer subscribes to it,
 				and then it generates an Observabl
@@ -96,13 +97,13 @@ Gradle implementaion
 			
 
 > **credits :**
-- https://bugfender.com/blog/data-flows-in-rxjava2-observable-flowable-single-maybe-completable/
-- https://www.raywenderlich.com/my-tutorials
+- http://bugfender.com/blog/data-flows-in-rxjava2-observable-flowable-single-maybe-completable/
+- http://www.raywenderlich.com/my-tutorials
 - **useful links :**
 	- doonerror :
-		-  https://stackoverflow.com/a/33670742/6435871
+		-  http://stackoverflow.com/a/33670742/6435871
 	- networking :
-		- https://jakewharton.com/the-state-of-managing-state-with-rxjava/
+		- http://jakewharton.com/the-state-of-managing-state-with-rxjava/
 	- error handling :
-		-  https://www.baeldung.com/rxjava-error-handling
+		-  http://www.baeldung.com/rxjava-error-handling
 
