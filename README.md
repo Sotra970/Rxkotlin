@@ -35,29 +35,30 @@ Gradle implementaion
 > **3-SUBJECTS :**
  - abstract (which means it doesn’t provide an implementation) but the framework provides several default implementations that can be super-useful.
 
-	**1. Publish Subject:**
+**1. Publish Subject:**
  
-	 - it doesn’t cache any event,so notifications about past elements
+ - it doesn’t cache any event,so notifications about past elements
 	   aren’t forwardedto each new observer.
-	 -   Once the PublishableSubject emits an error, all the subscribers
+ -   Once the PublishableSubject emits an error, all the subscribers
 	          are notified and won’t receive anything more. 
-	   -   A PublishableSubject is useful, for instance, in bypassing hardwar events like  		scroll positions, mouse events, clicks, etc… 
-	    - so yo can subscribe several observers to them 		but you just want to listen out for newer events.
+   -   A PublishableSubject is useful, for instance, in bypassing hardwar events like  		scroll positions, mouse events, clicks, etc… 
+    - so yo can subscribe several observers to them 		but you just want to listen out for newer events.
 	    
-	**2.  Replay:**
+**2.  Replay:**
 
-	 - replays events to current and late observers, and it can be created in several ways:
-    1. create: unbounded subject that replays everything
-    2. createWithSize(int):only retains the amount of items indicated.
-    3. createWithTime(int, TimeUnit): retains only objects contained in the specified time window.
-    4. createWithTimeAndSize: This is  combination of 2 and 3 
+ - replays events to current and late observers, and it can be created in several ways:
 
-	**3. BehaviorSubject:**
+	1. create: unbounded subject that replays everything
+	2. createWithSize(int):only retains the amount of items indicated.
+   	3. createWithTime(int, TimeUnit): retains only objects contained in the specified time window.
+   	4. createWithTimeAndSize: This is  combination of 2 and 3 
+
+**3. BehaviorSubject:**
 	
-	 -  used in Android’s Presenters/ViewModels, is quite similar to the PublishSubject
-	 - caches the most recent value emitted(deliver last emitted value to new subscriber)
+ -  used in Android’s Presenters/ViewModels, is quite similar to the PublishSubject
+ - caches the most recent value emitted(deliver last emitted value to new subscriber)
 
-	**4. AsyncSubject :**
+**4. AsyncSubject :**
   	
 
 	 - caches the last event emitted and sends it to the observers only when an onComplete event is emitted.
@@ -65,26 +66,32 @@ Gradle implementaion
 
 > **4-OPERATORS**
 
-	1-Creating Observables
-		-Create:operator creates an Observable from scratch 
-			-http://reactivex.io/documentation/operators/images/create.c.png
-			-http://reactivex.io/documentation/operators/create.html
-			- next > next >  .. compelete
-		-Defer: 
-			-The Defer operator waits until an observer subscribes to it,
+**1-Creating Observables**
+
+ - **1. Create:**
+	  - operator creates an Observable from scratch 
+	- next > next >  .. compelete
+		![enter image description here](https://reactivex.io/documentation/operators/images/create.c.png)
+		- [see more](https://reactivex.io/documentation/operators/create.html)
+- **2. Defer:** 
+	- The Defer operator waits until an observer subscribes to it,
 				and then it generates an Observabl
-			-So you can create multi-value observable based on state at time of subscription
-				-Note : fromCallable: creates observable that emits single value, then completes.	
+	- So you can create multi-value observable based on state at time of subscription
+	- Note : fromCallable: creates observable that emits single value, then completes.	
+	![enter image description here](http://reactivex.io/documentation/operators/images/defer.c.png)
 				
-			-http://reactivex.io/documentation/operators/defer.html
-			-http://reactivex.io/documentation/operators/images/defer.c.png
+		- [see more](http://reactivex.io/documentation/operators/defer.html)
 			
 			
 			
-credits : 
--https://bugfender.com/blog/data-flows-in-rxjava2-observable-flowable-single-maybe-completable/
--https://www.raywenderlich.com/my-tutorials
-useful links :
-	- doonerror : https://stackoverflow.com/a/33670742/6435871
-	- networking :https://jakewharton.com/the-state-of-managing-state-with-rxjava/
-	- error handling : https://www.baeldung.com/rxjava-error-handling
+
+> **credits :**
+- https://bugfender.com/blog/data-flows-in-rxjava2-observable-flowable-single-maybe-completable/
+- https://www.raywenderlich.com/my-tutorials
+- **useful links :**
+	- doonerror :
+		-  https://stackoverflow.com/a/33670742/6435871
+	- networking :
+		- https://jakewharton.com/the-state-of-managing-state-with-rxjava/
+	- error handling :
+		-  https://www.baeldung.com/rxjava-error-handling
