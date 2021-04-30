@@ -7,57 +7,63 @@ Gradle implementaion
     // RxJava2 Dependencies
     implementation("io.reactivex.rxjava2:rxkotlin:2.2.0")
 
-1-STREAM TYPES(observables )
-    
-    1-Observable: emit a stream elements (endlessly)
-	
-	2-Flowable: emit a stream of elements (endlessly, with backpressure)
-	
-	3-Single: emits exactly one element
-	
-	4-Maybe: emits zero or one elements
-	
-	5-Compelteable: emits a “complete” event, without emitting any data type, just a success/failure
+> **1-STREAM TYPES(observables )**
 
-2-Observer : the observer has 4 interface methods to know the different states of the Observable.
+  
 
-	1-onSubscribe(): This method is invoked when the Observer is subscribed to the Observable.
-	
-	2-onNext(): This method is called when a new item is emitted from the Observable.
-	
-	3-onError(): This method is called when an error occurs and the emission of data is not successfully completed.
-	
-	4-onComplete(): This method is called when the Observable has successfully completed emitting all items.
+	   1. Observable: emit a stream elements (endlessly) 
+	   2. Flowable: emit a stream of elements (endlessly, with backpressure) 	
+	   3. Single: emits exactly one element 	 	
+	   4. Maybe: emits zero or one elements 	
+	   5. Compelteable: emits a “complete” event, without emitting any data type, just a success/failure
+     
 
+> **2- Observer :**
 
-3-SUBJECTS : abstract (which means it doesn’t provide an implementation) but the framework provides several default implementations that can be super-useful.
+-  Observer has 4 interface methods to know the different states of the Observable: 
 
-	1-Publish Subject:
-		-it doesn’t cache any event,so notifications about past elements aren’t forwarded 
-			to each new observer.
-		-Once the PublishableSubject emits an error, all the subscribers are notified and 
-			won’t receive anything more.
-		-A PublishableSubject is useful, for instance, in bypassing hardware events like 
-		scroll positions, mouse events, clicks, etc… so you can subscribe several observers to them
-		but you just want to listen out for newer events.	
-	
-	2-Replay:  replays events to current and late observers, and it can be created in several ways
-		1-create: unbounded subject that replays everything
-		2-createWithSize(int):only retains the amount of items indicated.
-		3-createWithTime(int, TimeUnit): retains only objects contained in the specified time window.
-		4-createWithTimeAndSize: This is a combination of 2 and 3.
+		1-onSubscribe(): This method is invoked when the Observer is subscribed to the Observable.
 		
-	3-BehaviorSubject:
-		-used in Android’s Presenters/ViewModels, is quite similar to the PublishSubject
-		-caches the most recent value emitted(deliver last emitted value to new subscriber)
+		2-onNext(): This method is called when a new item is emitted from the Observable.
 		
-	4-AsyncSubject : 
-		-caches the last event emitted and sends it to the observers only when an onComplete event is emitted.
-		-This subject can be used when we don’t care about the data stream, only the last object.
+		3-onError(): This method is called when an error occurs and the emission of data is not successfully completed.
 		
-	
+		4-onComplete(): This method is called when the Observable has successfully completed emitting all items.
 
-4-OPERATORS 
+
+
+> **3-SUBJECTS :**
+ - abstract (which means it doesn’t provide an implementation) but the framework provides several default implementations that can be super-useful.
+
+	**1. Publish Subject:**
+ 
+	 - it doesn’t cache any event,so notifications about past elements
+	   aren’t forwardedto each new observer.
+	 -   Once the PublishableSubject emits an error, all the subscribers
+	          are notified and won’t receive anything more. 
+	   -   A PublishableSubject is useful, for instance, in bypassing hardwar events like  		scroll positions, mouse events, clicks, etc… 
+	    - so yo can subscribe several observers to them 		but you just want to listen out for newer events.
+	    
+	**2.  Replay:**
+
+	 - replays events to current and late observers, and it can be created in several ways:
+    1. create: unbounded subject that replays everything
+    2. createWithSize(int):only retains the amount of items indicated.
+    3. createWithTime(int, TimeUnit): retains only objects contained in the specified time window.
+    4. createWithTimeAndSize: This is  combination of 2 and 3 
+
+	**3. BehaviorSubject:**
+	
+	 -  used in Android’s Presenters/ViewModels, is quite similar to the PublishSubject
+	 - caches the most recent value emitted(deliver last emitted value to new subscriber)
+
+	**4. AsyncSubject :**
+  	
+
+	 - caches the last event emitted and sends it to the observers only when an onComplete event is emitted.
+	 - This subject can be used when we don’t care about the data stream, only the last object.
+
+> **4-OPERATORS**
 
 	1-Creating Observables
 		-Create:operator creates an Observable from scratch 
@@ -82,4 +88,3 @@ useful links :
 	- doonerror : https://stackoverflow.com/a/33670742/6435871
 	- networking :https://jakewharton.com/the-state-of-managing-state-with-rxjava/
 	- error handling : https://www.baeldung.com/rxjava-error-handling
-
