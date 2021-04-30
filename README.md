@@ -51,6 +51,7 @@ Gradle implementaion
 **4.  createWithTimeAndSize:** This is  combination of 2 and 3 
 
 	![enter image description here](https://reactivex.io/documentation/operators/images/S.ReplaySubject.png)
+
 	**3. BehaviorSubject:**
 	
 	 -  used in Android’s Presenters/ViewModels, is quite similar to the PublishSubject
@@ -58,6 +59,7 @@ Gradle implementaion
 	 ![enter image description here](https://reactivex.io/documentation/operators/images/S.BehaviorSubject.png)
 	![enter image description here](https://reactivex.io/documentation/operators/images/S.BehaviorSubject.e.png)
 
+	
 	**4. AsyncSubject :**
   
 	 - caches the last event emitted and sends it to the observers only when an onComplete event is emitted.
@@ -66,6 +68,7 @@ Gradle implementaion
 	 ![enter image description here](https://reactivex.io/documentation/operators/images/S.AsyncSubject.png)
 
 ![enter image description here](https://reactivex.io/documentation/operators/images/S.AsyncSubject.e.png)
+
 > **4-OPERATORS**
 
 **1-Creating Observables**
